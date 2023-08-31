@@ -153,28 +153,15 @@ const weaponsArray = [{
 
 function selectRandom() {
 
-    let randomCard = [];
-    
-    for (let i = 0; i < suspectsArray.length; i++) {
-        let randomNum = Math.floor(Math.random() * (suspectsArray.length - 1));
-        randomCard.push(suspectsArray[randomNum]);
-    }    
-    
-    return randomCard;
-
-    // for (let i = 0; i < weaponsArray.length; i++) {
-    //     let randomNum = Math.floor(Math.random() * (weaponsArray.length - 1));
-    //     let randomWeapon = weaponsArray[randomNum];
-    //     return randomWeapon;
-    // }    
-
-    // for (let i = 0; i < roomsArray.length; i++) {
-    //     let randomNum = Math.floor(Math.random() * (roomsArray.length - 1))
-    //     let randomRoom = roomsArray[randomNum];
-    //     return randomRoom;
-    // }
+    let randomCards = [];
+    let longestLength = Math.max(suspectsArray.length, weaponsArray.length, roomsArray.length);
+   
+    for (let i = 0; i < longestLength; i++) {
+        randomCards.push(longestLength[i]);
+        }
+    return randomCards;
 }
-
+    
 function pickMystery() {
 
     let mystery = {};
