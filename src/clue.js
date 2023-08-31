@@ -151,15 +151,15 @@ const weaponsArray = [{
 
 // ITERATION 2
 
-function selectRandom() {
+function selectRandom(array) {
 
-    let randomCards = [];
-    let longestLength = Math.max(suspectsArray.length, weaponsArray.length, roomsArray.length);
-   
-    for (let i = 0; i < longestLength; i++) {
-        randomCards.push(longestLength[i]);
-        }
-    return randomCards;
+    let randomElement = "";
+
+    for (let i = 0; i < array.length; i++) {
+        let randomNum = Math.floor(Math.random() * (array.length - 1));
+        randomElement = array[randomNum];
+        return randomElement;
+    }
 }
     
 function pickMystery() {
@@ -188,6 +188,6 @@ function pickMystery() {
 
 // ITERATION 3
 
-function revealMystery() {
-    return  `<FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <PLACE>!`
+function revealMystery(object) {
+    return `<FIRST NAME> <LAST NAME> killed Mr. Boddy using the <WEAPON> in the <PLACE>!`
 }
